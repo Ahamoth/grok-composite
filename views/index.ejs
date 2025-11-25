@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grok Composite — Фотореализм с ИИ</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Grok-4 Composite</h1>
+    <p>Вырезает объект → вставляет на фон с тенями и освещением через Grok-4</p>
+
+    <form action="/compose" method="POST" enctype="multipart/form-data">
+      <div class="field">
+        <label>1. Фон (куда вставляем)</label>
+        <input type="file" name="background" accept="image/*" required />
+      </div>
+
+      <div class="field">
+        <label>2. Объект (что вырезаем)</label>
+        <input type="file" name="object" accept="image/*" required />
+      </div>
+
+      <div class="field">
+        <label>Промпт (опционально)</label>
+        <textarea name="prompt" placeholder="Например: Помести машину на дорогу, тень от солнца слева, масштаб 80%"></textarea>
+      </div>
+
+      <button type="submit">Создать фотореализм через Grok-4</button>
+    </form>
+  </div>
+</body>
+</html>
